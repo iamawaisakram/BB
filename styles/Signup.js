@@ -53,7 +53,7 @@ export default StyleSheet.create({
     color: '#DBEDB0'
   },
   bottomContainer: {
-    height: height * 0.88,
+    height: height * 0.9,
     alignItems: 'center'
   },
   signupImage: {

@@ -79,7 +79,7 @@ export default StyleSheet.create({
   },
   bottomImage: {
     width,
-    height: height * 0.35
+    height: height * 0.42
   },
   fb: {
     width: width * 0.75,
