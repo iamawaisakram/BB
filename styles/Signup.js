@@ -160,7 +160,7 @@ export default StyleSheet.create({
       },
       android: {
         right: 20,
-        bottom: 70
+        bottom: 85
       }
     })
   },
