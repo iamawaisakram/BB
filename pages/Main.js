@@ -5,10 +5,16 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  Dimensions
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { SafeAreaView } from 'react-navigation';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+  listenOrientationChange as loc,
+  removeOrientationListener as rol
+} from 'react-native-responsive-screen';
 
 //styles
 import styles from '../styles/Main';
@@ -18,9 +24,17 @@ import commonStyles from '../styles/Common';
 import Icon from 'react-native-vector-icons/Entypo';
 
 export default class Main extends Component {
+  componentDidMount() {
+    loc(this);
+  }
+
+  componentWillUnMount() {
+    rol();
+  }
+
   render() {
     return (
-      <ScrollView style={commonStyles.mainContainer}>
+      <ScrollView style={{ width: wp('100%'), height: hp('100%') }}>
         <LinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}

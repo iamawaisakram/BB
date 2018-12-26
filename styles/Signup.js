@@ -1,10 +1,15 @@
 import { Platform, StyleSheet, Dimensions } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
+
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 export default StyleSheet.create({
   container: {
-    height: height * 0.12,
+    height: hp('12%'),
     flexDirection: 'row',
     justifyContent: 'center'
   },
@@ -29,7 +34,7 @@ export default StyleSheet.create({
     borderColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',
-    left: 20,
+    left: 30,
 
     position: 'absolute',
     marginBottom: 20,
@@ -53,7 +58,7 @@ export default StyleSheet.create({
     color: '#DBEDB0'
   },
   bottomContainer: {
-    height: height * 0.92,
+    height: hp('92%'),
     alignItems: 'center'
   },
   signupImage: {
@@ -62,22 +67,22 @@ export default StyleSheet.create({
     justifyContent: 'flex-end',
     ...Platform.select({
       ios: {
-        height: height * 0.3,
-        width: width * 0.8,
+        height: hp('30%'),
+        width: wp('80%'),
         top: 60,
-        left: 15
+        left: 20
       },
       android: {
-        height: height * 0.4,
-        width: width * 0.8,
+        height: hp('40%'),
+        width: wp('80%'),
         top: 50,
         left: 15
       }
     })
   },
   inputPanel: {
-    height: height * 0.65,
-    width: width * 0.7,
+    height: hp('65%'),
+    width: wp('70%'),
     borderRadius: 10,
     top: 80,
     justifyContent: 'center',
@@ -90,20 +95,20 @@ export default StyleSheet.create({
     right: 25
   },
   firstInput: {
-    height: height * 0.1,
+    height: hp('10%'),
     top: 80
   },
   secondInput: {
-    height: height * 0.1,
+    height: hp('10%'),
     top: 90
   },
   thirdInput: {
-    height: height * 0.1,
+    height: hp('10%'),
     top: 100
   },
   nameTextInput: {
     borderBottomWidth: 2,
-    width: width * 0.6,
+    width: wp('60%'),
     borderColor: '#34323D',
     ...Platform.select({
       ios: {
@@ -116,7 +121,7 @@ export default StyleSheet.create({
   },
   mailTextInput: {
     borderBottomWidth: 2,
-    width: width * 0.6,
+    width: wp('60%'),
     borderColor: '#34323D',
     ...Platform.select({
       ios: {
@@ -129,7 +134,7 @@ export default StyleSheet.create({
   },
   passwordInput: {
     borderBottomWidth: 2,
-    width: width * 0.6,
+    width: wp('60%'),
     borderColor: '#34323D',
     ...Platform.select({
       ios: {
@@ -141,8 +146,8 @@ export default StyleSheet.create({
     })
   },
   nextButton: {
-    width: width * 0.3,
-    height: height * 0.07,
+    width: wp('30%'),
+    height: hp('7%'),
     backgroundColor: 'blue',
     position: 'absolute',
     borderRadius: 30,
