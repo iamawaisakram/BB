@@ -53,7 +53,7 @@ export default StyleSheet.create({
     color: '#DBEDB0'
   },
   bottomContainer: {
-    height: height * 0.9,
+    height: height * 0.92,
     alignItems: 'center'
   },
   signupImage: {
@@ -150,12 +150,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     ...Platform.select({
       ios: {
-        bottom: 80,
+        bottom: 100,
         right: 20
       },
       android: {
         right: 20,
-        bottom: 50
+        bottom: 70
       }
     })
   },
