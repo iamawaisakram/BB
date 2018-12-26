@@ -4,13 +4,15 @@ import {
   View,
   Image,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { SafeAreaView } from 'react-navigation';
 
 //styles
 import styles from '../styles/Main';
+import commonStyles from '../styles/Common';
 
 //icons
 import Icon from 'react-native-vector-icons/Entypo';
@@ -18,7 +20,7 @@ import Icon from 'react-native-vector-icons/Entypo';
 export default class Main extends Component {
   render() {
     return (
-      <View>
+      <ScrollView style={commonStyles.mainContainer}>
         <LinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
@@ -89,7 +91,7 @@ export default class Main extends Component {
             <Text style={styles.tagText}>GOOGLE PLUS</Text>
           </LinearGradient>
         </ImageBackground>
-      </View>
+      </ScrollView>
     );
   }
 }

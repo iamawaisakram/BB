@@ -10,6 +10,8 @@ import {
   ScrollView
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import commonStyles from '../styles/Common';
 
 //style
 import styles from '../styles/Signup';
@@ -21,7 +23,7 @@ import FIcon from 'react-native-vector-icons/Feather';
 class Signup extends Component {
   render() {
     return (
-      <ScrollView ref="myScrollView">
+      <ScrollView style={commonStyles.mainContainer}>
         <TouchableOpacity
           onPress={() => this.props.navigation.goBack()}
           style={styles.directArrow}
