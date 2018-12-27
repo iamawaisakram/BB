@@ -35,6 +35,7 @@ class Signup extends Component {
 
   componentDidMount() {
     loc(this);
+    this.textInputRef.focus();
   }
 
   componentWillUnMount() {
@@ -44,7 +45,10 @@ class Signup extends Component {
 
   render() {
     return (
-      <ScrollView style={{ width: wp('100%'), height: hp('100%') }}>
+      <ScrollView
+        style={{ width: wp('100%'), height: hp('100%') }}
+        keyboardShouldPersistTaps="handled"
+      >
         <TouchableOpacity
           onPress={() => this.props.navigation.goBack()}
           style={styles.directArrow}
@@ -85,32 +89,31 @@ class Signup extends Component {
             <View style={styles.firstInput}>
               <Text style={styles.inputHeader}>NAME</Text>
               <TextInput
-                ref="myInput"
+                style={styles.nameTextInput}
+                ref={ref => (this.textInputRef = ref)}
+                autoFocus={true}
                 placeholder="Hristo Hristov"
                 placeholderTextColor={'#353535'}
                 selectionColor={'#353535'}
-                style={styles.nameTextInput}
               />
             </View>
             <View style={styles.secondInput}>
               <Text style={styles.inputHeader}>EMAIL</Text>
               <TextInput
-                ref="myInput"
+                style={styles.mailTextInput}
                 placeholder="hristov123@gmail.com"
                 placeholderTextColor={'#353535'}
                 selectionColor={'#353535'}
-                style={styles.mailTextInput}
               />
             </View>
             <View style={styles.thirdInput}>
               <Text style={styles.inputHeader}>PASSWORD</Text>
               <TextInput
-                ref="myInput"
+                style={styles.passwordInput}
                 placeholder="*******"
                 placeholderTextColor={'#353535'}
                 selectionColor={'#353535'}
                 secureTextEntry={true}
-                style={styles.passwordInput}
               />
             </View>
           </LinearGradient>
