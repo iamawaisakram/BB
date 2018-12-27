@@ -15,6 +15,7 @@ import {
   listenOrientationChange as loc,
   removeOrientationListener as rol
 } from 'react-native-responsive-screen';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 //style
 import styles from '../styles/Signup';
@@ -45,7 +46,9 @@ class Signup extends Component {
 
   render() {
     return (
-      <ScrollView
+      <KeyboardAwareScrollView
+        resetScrollToCoords={{ x: 0, y: 0 }}
+        scrollEnabled={true}
         style={{ width: wp('100%'), height: hp('100%') }}
         keyboardShouldPersistTaps="handled"
       >
@@ -95,6 +98,10 @@ class Signup extends Component {
                 placeholder="Hristo Hristov"
                 placeholderTextColor={'#353535'}
                 selectionColor={'#353535'}
+                onSubmitEditing={() => {
+                  this.email.focus();
+                }}
+                blurOnSubmit={false}
               />
             </View>
             <View style={styles.secondInput}>
@@ -102,8 +109,15 @@ class Signup extends Component {
               <TextInput
                 style={styles.mailTextInput}
                 placeholder="hristov123@gmail.com"
+                ref={input => {
+                  this.email = input;
+                }}
                 placeholderTextColor={'#353535'}
                 selectionColor={'#353535'}
+                onSubmitEditing={() => {
+                  this.password.focus();
+                }}
+                blurOnSubmit={false}
               />
             </View>
             <View style={styles.thirdInput}>
@@ -111,6 +125,9 @@ class Signup extends Component {
               <TextInput
                 style={styles.passwordInput}
                 placeholder="*******"
+                ref={input => {
+                  this.password = input;
+                }}
                 placeholderTextColor={'#353535'}
                 selectionColor={'#353535'}
                 secureTextEntry={true}
@@ -127,7 +144,7 @@ class Signup extends Component {
             <Text style={styles.buttonText}>NEXT</Text>
           </LinearGradient>
         </LinearGradient>
-      </ScrollView>
+      </KeyboardAwareScrollView>
     );
   }
 }

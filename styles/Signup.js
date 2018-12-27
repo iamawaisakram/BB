@@ -65,17 +65,18 @@ export default StyleSheet.create({
     position: 'absolute',
     zIndex: 1111,
     justifyContent: 'flex-end',
+    alignSelf: 'stretch',
     ...Platform.select({
       ios: {
         height: hp('30%'),
         width: wp('80%'),
-        top: 60,
+        marginTop: hp('7%'),
         left: 20
       },
       android: {
         height: hp('40%'),
-        width: wp('80%'),
-        top: 50,
+        width: wp('75%'),
+        marginTop: hp('7%'),
         left: 15
       }
     })
@@ -96,7 +97,8 @@ export default StyleSheet.create({
   },
   firstInput: {
     height: hp('10%'),
-    top: 80
+    top: 80,
+    zIndex: 1112
   },
   secondInput: {
     height: hp('10%'),
