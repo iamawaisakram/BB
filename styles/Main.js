@@ -1,17 +1,22 @@
 import { Platform, StyleSheet, Dimensions } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
+
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 export default StyleSheet.create({
   container: {
-    height: height * 0.65,
+    height: hp('65%'),
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF'
   },
   logo: {
-    width: width * 0.2,
-    height: height * 0.2,
+    width: wp('20%'),
+    height: hp('20%'),
     top: 65
   },
   userChoices: {
@@ -22,13 +27,13 @@ export default StyleSheet.create({
   },
   logIn: {
     flex: 1,
-    width: width * 0.5,
+    width: wp('50%'),
     backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: height * 0.4,
-    marginTop: height * 0.05
+    height: hp('40%'),
+    marginTop: hp('5%')
   },
   logInText: {
     fontFamily: 'Montserrat-Light',
@@ -37,12 +42,12 @@ export default StyleSheet.create({
   },
   signUp: {
     flex: 1,
-    width: width * 0.5,
+    width: wp('50%'),
     backgroundColor: 'transparent',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: height * 0.4,
-    marginTop: height * 0.05
+    height: hp('40%'),
+    marginTop: hp('5%')
   },
   signUpText: {
     fontFamily: 'Montserrat-Light',
@@ -50,7 +55,7 @@ export default StyleSheet.create({
     fontSize: 32
   },
   description: {
-    width: width * 0.4,
+    width: wp('40%'),
     fontFamily: 'Montserrat-Medium'
   },
   directArrow: {
@@ -78,54 +83,56 @@ export default StyleSheet.create({
     color: '#DBEDB0'
   },
   bottomImage: {
-    width,
-    height: height * 0.35
+    height: hp('42%'),
+    width: undefined,
+    alignSelf: 'stretch',
+    flex: 1
   },
   fb: {
-    width: width * 0.75,
+    width: wp('75%'),
     borderBottomRightRadius: 10,
     ...Platform.select({
       ios: {
-        height: height * 0.116,
+        height: hp('11.6%'),
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 10 },
         shadowOpacity: 0.5,
         shadowRadius: 0
       },
       android: {
-        height: height * 0.11,
+        height: hp('11%'),
         elevation: 5
       }
     }),
     justifyContent: 'center'
   },
   tw: {
-    width: width * 0.65,
+    width: wp('65%'),
     borderBottomRightRadius: 10,
     ...Platform.select({
       ios: {
-        height: height * 0.116,
+        height: hp('11.6%'),
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.5,
         shadowRadius: 0
       },
       android: {
-        height: height * 0.11,
+        height: hp('11%'),
         elevation: 4
       }
     }),
     justifyContent: 'center'
   },
   google: {
-    width: width * 0.55,
+    width: wp('55%'),
     borderBottomRightRadius: 10,
     ...Platform.select({
       ios: {
-        height: height * 0.118
+        height: hp('11.8%')
       },
       android: {
-        height: height * 0.11
+        height: hp('11%')
       }
     }),
     justifyContent: 'center'
